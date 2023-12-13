@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Method</title>
+</head>
+
+<body>
+    <h1>Get Method</h1>
+    <form action="" id="form">
+        <label for="">Name : </label><input type="name" id="name"><br><br>
+        <label for="">Class : </label><input type="text" id="class"><br><br>
+        <label for="">Country</label>
+        <select id="country" class="test first">
+            <option value="India">India</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Sri Lanka">Sri Lanka</option>
+            <option value="Nepal">Nepal</option>
+        </select><br><br>
+        <input type="submit">
+    </form>
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function () {
+
+        // get content : 
+
+        var a = $('body').html();            // get html content
+        // var a = $('#form').html();    
+        console.log(a);
+
+        var b = $('#form').text();           // get text content
+        console.log(b);
+
+        var c = $('#country').attr('class');           // get valu off this attribute
+        console.log(c);
+
+        $('#form').submit(function () {
+            var name = $('#name').val();                 // Get input value
+            var classname = $('#class').val();
+            var country = $('#country').val();
+            alert("Hello " + name + " class: " + classname + " country : " + country);
+        });
+    })
+</script>
+
+</html>
